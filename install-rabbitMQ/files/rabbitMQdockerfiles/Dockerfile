@@ -1,24 +1,11 @@
-ARG RABBITMQ_VERSION
-FROM rabbitmq:${RABBITMQ_VERSION}-management-alpine
+FROM rabbitmq
 
-ENV RABBITMQ_ERLANG_COOKIE="cookiemonster"
+# Define environment variables.
+ENV RABBITMQ_USER sensu
+ENV RABBITMQ_PASSWORD 1992
 
-RUN chgrp -R root /var/lib/rabbitmq /var/log/rabbitmq /etc/rabbitmq
-RUN chmod g+w /etc/passwd &&\
-    chmod -R g+rwx /var/lib/rabbitmq /var/log/rabbitmq /etc/rabbitmq
-
-
-
-
-
-ADD launch.sh /launch.sh
-
-ADD rabbit /rabbit
-VOLUME /var/lib/rabbitmq
+ADD init.sh /init.sh
 EXPOSE 15672/tcp 25672/tcp 4369/tcp 5671/tcp 5672/tcp
 
-CMD /launch.sh
-
-
-
- 
+# Define default command
+CMD ["/init.sh"]

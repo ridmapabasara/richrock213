@@ -5,7 +5,7 @@
   gather_facts: yes
   
   roles:
-   # - install-docker
-    - install-rabbitMQ
-    #- install-sensu
-    
+   #- install-docker
+   #- install-rabbitMQ
+   #- install-redis
+   - install-sensu
