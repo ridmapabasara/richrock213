@@ -1,0 +1,26 @@
+
+####Copy dockerfiles################
+- name: copy Docekrfiles
+  copy:
+      src: '{{home_dir}}/install-rabbitMQ/files/rabbitMQdockerfiles'
+      dest: /tmp
+      mode: 777
+  with_items:
+      ['Dockerfile','launch.sh','Makefile','rabbit']
+
+- name: install make 
+  command: apt-get install make
+
+- name: execute dockerfile 
+  make:
+    chdir: /tmp/rabbitMQdockerfiles   
+- name: Install pip
+  command: apt-get install python-pip -y
+
+- name: install python docker
+  command: pip install docker
+
+- name: create a rabitMQ container
+  docker_container:
+     name: rabitMQ
+     image: ansible/awx_rabbitmq

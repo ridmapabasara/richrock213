@@ -1,0 +1,26 @@
+---
+# tasks file for install-sensu
+- name: add GPG key
+  shell : wget -O- https://sensu.global.ssl.fastly.net/apt/pubkey.gpg |  apt-key add -
+
+- name: add sensu list
+  copy:
+      src: '{{home_dir}}/install-sensu/files/sensu.list'
+      dest: /etc/apt/sources.list.d/sensu.list
+      mode: 777
+
+- name: update
+  shell: apt-get update -y  &&  sudo apt-get install sensu -y
+  
+
+- name: add rabbitq conf to sensu
+  copy:
+      src: '{{home_dir}}/install-sensu/files/rabbitmq.json'
+      dest: /etc/sensu/conf.d/rabbitmq.json
+      mode: 777
+
+- name: add api conf to sensu
+  copy:
+      src: '{{home_dir}}/install-sensu/files/api.json'
+      dest: /etc/sensu/conf.d/api.json
+      mode: 777
