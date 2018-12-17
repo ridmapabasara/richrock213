@@ -3168,3 +3168,156 @@ insufficient you can add warn=False to this command task or set command_warnings
 2018-12-17 21:51:34,400 p=12128 u=ridma |  changed: [35.175.205.133]
 2018-12-17 21:51:34,406 p=12128 u=ridma |  PLAY RECAP ************************************************************************************************************************
 2018-12-17 21:51:34,407 p=12128 u=ridma |  35.175.205.133             : ok=32   changed=29   unreachable=0    failed=0   
+2018-12-17 23:04:13,271 p=17008 u=ridma |  [DEPRECATION WARNING]: [defaults]hostfile option, The key is misleading as it can also be a list of hosts, a directory or a list 
+of paths , use [defaults] inventory=/path/to/file|dir instead. This feature will be removed in version 2.8. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:04:13,523 p=17008 u=ridma |  PLAY [server] *********************************************************************************************************************
+2018-12-17 23:04:13,542 p=17008 u=ridma |  TASK [Gathering Facts] ************************************************************************************************************
+2018-12-17 23:04:26,900 p=17008 u=ridma |  fatal: [3.83.118.235]: FAILED! => {"changed": false, "module_stderr": "Shared connection to 3.83.118.235 closed.\r\n", "module_stdout": "\r\n/bin/sh: 1: /usr/bin/python: not found\r\n", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 127}
+2018-12-17 23:04:26,903 p=17008 u=ridma |  	to retry, use: --limit @/home/ridma/Desktop/Fiver/richrock213/install-all.retry
+
+2018-12-17 23:04:26,904 p=17008 u=ridma |  PLAY RECAP ************************************************************************************************************************
+2018-12-17 23:04:26,904 p=17008 u=ridma |  3.83.118.235               : ok=0    changed=0    unreachable=0    failed=1   
+2018-12-17 23:05:33,052 p=17057 u=ridma |  [DEPRECATION WARNING]: [defaults]hostfile option, The key is misleading as it can also be a list of hosts, a directory or a list 
+of paths , use [defaults] inventory=/path/to/file|dir instead. This feature will be removed in version 2.8. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:05:33,295 p=17057 u=ridma |  PLAY [server] *********************************************************************************************************************
+2018-12-17 23:05:33,314 p=17057 u=ridma |  TASK [Gathering Facts] ************************************************************************************************************
+2018-12-17 23:05:46,805 p=17057 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:05:46,833 p=17057 u=ridma |  TASK [install-docker : apt-get update] ********************************************************************************************
+2018-12-17 23:06:02,447 p=17057 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:06:02,490 p=17057 u=ridma |  TASK [install-docker : Install docker packages] ***********************************************************************************
+2018-12-17 23:06:02,507 p=17057 u=ridma |  [DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated. Instead of using a loop to 
+supply multiple items and specifying `name: "{{ item }}"`, please use `name: ['apt-transport-https', 'ca-certificates', 'curl', 
+'software-properties-common']` and remove the loop. This feature will be removed in version 2.11. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:06:11,255 p=17057 u=ridma |  ok: [3.83.118.235] => (item=[u'apt-transport-https', u'ca-certificates', u'curl', u'software-properties-common'])
+2018-12-17 23:06:11,348 p=17057 u=ridma |  TASK [install-docker : Add Docker s official GPG key] *****************************************************************************
+2018-12-17 23:06:19,809 p=17057 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:06:19,849 p=17057 u=ridma |  TASK [install-docker : Verify that we have the key with the fingerprint] **********************************************************
+2018-12-17 23:06:29,039 p=17057 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:06:29,071 p=17057 u=ridma |  TASK [install-docker : Set up the stable repository] ******************************************************************************
+2018-12-17 23:06:40,115 p=17057 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:06:40,155 p=17057 u=ridma |  TASK [install-docker : Update apt packages] ***************************************************************************************
+2018-12-17 23:06:49,240 p=17057 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:06:49,287 p=17057 u=ridma |  TASK [install-docker : Install docker] ********************************************************************************************
+2018-12-17 23:07:08,286 p=17057 u=ridma |  ERROR! The requested handler 'Start docker on boot' was not found in either the main handlers list nor in the listening handlers list
+2018-12-17 23:08:50,161 p=17390 u=ridma |  [DEPRECATION WARNING]: [defaults]hostfile option, The key is misleading as it can also be a list of hosts, a directory or a list 
+of paths , use [defaults] inventory=/path/to/file|dir instead. This feature will be removed in version 2.8. Deprecation warnings 
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:08:50,448 p=17390 u=ridma |  PLAY [server] *********************************************************************************************************************
+2018-12-17 23:08:50,465 p=17390 u=ridma |  TASK [Gathering Facts] ************************************************************************************************************
+2018-12-17 23:09:04,539 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:09:04,581 p=17390 u=ridma |  TASK [install-docker : apt-get update] ********************************************************************************************
+2018-12-17 23:09:13,243 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:09:13,293 p=17390 u=ridma |  TASK [install-docker : Install docker packages] ***********************************************************************************
+2018-12-17 23:09:13,307 p=17390 u=ridma |  [DEPRECATION WARNING]: Invoking "apt" only once while using a loop via squash_actions is deprecated. Instead of using a loop to 
+supply multiple items and specifying `name: "{{ item }}"`, please use `name: ['apt-transport-https', 'ca-certificates', 'curl', 
+'software-properties-common']` and remove the loop. This feature will be removed in version 2.11. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:09:25,925 p=17390 u=ridma |  ok: [3.83.118.235] => (item=[u'apt-transport-https', u'ca-certificates', u'curl', u'software-properties-common'])
+2018-12-17 23:09:25,970 p=17390 u=ridma |  TASK [install-docker : Add Docker s official GPG key] *****************************************************************************
+2018-12-17 23:09:45,556 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:09:45,593 p=17390 u=ridma |  TASK [install-docker : Verify that we have the key with the fingerprint] **********************************************************
+2018-12-17 23:09:52,842 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:09:52,888 p=17390 u=ridma |  TASK [install-docker : Set up the stable repository] ******************************************************************************
+2018-12-17 23:10:00,633 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:10:00,692 p=17390 u=ridma |  TASK [install-docker : Update apt packages] ***************************************************************************************
+2018-12-17 23:10:09,342 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:10:09,383 p=17390 u=ridma |  TASK [install-docker : Install docker] ********************************************************************************************
+2018-12-17 23:10:17,737 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:10:17,789 p=17390 u=ridma |  TASK [install-docker : Create "docker" group] *************************************************************************************
+2018-12-17 23:10:24,701 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:10:24,744 p=17390 u=ridma |  TASK [install-docker : Add remote "ubuntu" user to "docker" group] ****************************************************************
+2018-12-17 23:10:32,383 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:10:32,427 p=17390 u=ridma |  TASK [install-docker : Install docker-compose] ************************************************************************************
+2018-12-17 23:10:56,348 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:10:56,391 p=17390 u=ridma |  TASK [install-docker : Start docker on boot] **************************************************************************************
+2018-12-17 23:11:04,126 p=17390 u=ridma |  ok: [3.83.118.235]
+2018-12-17 23:11:04,176 p=17390 u=ridma |  TASK [install-rabbitMQ : copy Docekrfiles] ****************************************************************************************
+2018-12-17 23:12:12,953 p=17390 u=ridma |  changed: [3.83.118.235] => (item=Dockerfile)
+2018-12-17 23:13:00,256 p=17390 u=ridma |  ok: [3.83.118.235] => (item=init.sh)
+2018-12-17 23:13:47,664 p=17390 u=ridma |  ok: [3.83.118.235] => (item=Makefile)
+2018-12-17 23:14:35,593 p=17390 u=ridma |  ok: [3.83.118.235] => (item=rabbit)
+2018-12-17 23:14:35,626 p=17390 u=ridma |  TASK [install-rabbitMQ : install make] ********************************************************************************************
+2018-12-17 23:14:44,299 p=17390 u=ridma |   [WARNING]: Consider using the apt module rather than running apt-get.  If you need to use command because apt is insufficient you
+can add warn=False to this command task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-17 23:14:44,301 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:14:44,354 p=17390 u=ridma |  TASK [install-rabbitMQ : execute dockerfile] **************************************************************************************
+2018-12-17 23:14:58,328 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:14:58,358 p=17390 u=ridma |  TASK [install-rabbitMQ : Install pip] *********************************************************************************************
+2018-12-17 23:15:22,189 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:15:22,234 p=17390 u=ridma |  TASK [install-rabbitMQ : install python docker] ***********************************************************************************
+2018-12-17 23:15:32,425 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:15:32,457 p=17390 u=ridma |  TASK [install-rabbitMQ : restart docker] ******************************************************************************************
+2018-12-17 23:15:40,620 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:15:40,653 p=17390 u=ridma |  TASK [install-rabbitMQ : create a rabitMQ container] ******************************************************************************
+2018-12-17 23:15:48,399 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:15:48,441 p=17390 u=ridma |  TASK [install-redis : redis container] ********************************************************************************************
+2018-12-17 23:16:00,891 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:16:00,935 p=17390 u=ridma |  TASK [install-sensu : add GPG key] ************************************************************************************************
+2018-12-17 23:16:07,959 p=17390 u=ridma |   [WARNING]: Consider using the get_url or uri module rather than running wget.  If you need to use command because get_url or uri
+is insufficient you can add warn=False to this command task or set command_warnings=False in ansible.cfg to get rid of this
+message.
+
+2018-12-17 23:16:07,960 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:16:08,000 p=17390 u=ridma |  TASK [install-sensu : add sensu list] *********************************************************************************************
+2018-12-17 23:16:24,655 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:16:24,702 p=17390 u=ridma |  TASK [install-sensu : update] *****************************************************************************************************
+2018-12-17 23:16:38,576 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:16:38,620 p=17390 u=ridma |  TASK [install-sensu : add rabbitq conf to sensu] **********************************************************************************
+2018-12-17 23:16:55,404 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:16:55,435 p=17390 u=ridma |  TASK [install-sensu : add api conf to sensu] **************************************************************************************
+2018-12-17 23:17:11,142 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:17:11,173 p=17390 u=ridma |  TASK [install-sensu : add GPG key] ************************************************************************************************
+2018-12-17 23:17:18,556 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:17:18,599 p=17390 u=ridma |  TASK [install-sensu : add uchiwa list] ********************************************************************************************
+2018-12-17 23:17:33,875 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:17:33,923 p=17390 u=ridma |  TASK [install-sensu : update and install uchiwa] **********************************************************************************
+2018-12-17 23:17:44,830 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:17:44,876 p=17390 u=ridma |  TASK [install-sensu : add uchiwa config] ******************************************************************************************
+2018-12-17 23:18:02,138 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:02,180 p=17390 u=ridma |  TASK [install-sensu : give permission] ********************************************************************************************
+2018-12-17 23:18:09,165 p=17390 u=ridma |   [WARNING]: Consider using the file module with mode rather than running chmod.  If you need to use command because file is
+insufficient you can add warn=False to this command task or set command_warnings=False in ansible.cfg to get rid of this message.
+
+2018-12-17 23:18:09,166 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:09,207 p=17390 u=ridma |  TASK [install-sensu : install UFW firewall] ***************************************************************************************
+2018-12-17 23:18:16,363 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:16,425 p=17390 u=ridma |  TASK [install-sensu : Enable and Restarting ufw] **********************************************************************************
+2018-12-17 23:18:23,210 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:23,253 p=17390 u=ridma |  TASK [install-sensu : ufw allow 3000] *********************************************************************************************
+2018-12-17 23:18:30,306 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:30,355 p=17390 u=ridma |  TASK [install-sensu : add sensu client] *******************************************************************************************
+2018-12-17 23:18:48,229 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:48,284 p=17390 u=ridma |  TASK [install-sensu : give permission] ********************************************************************************************
+2018-12-17 23:18:55,884 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:18:55,939 p=17390 u=ridma |  TASK [install-sensu : restart sensu client] ***************************************************************************************
+2018-12-17 23:19:04,705 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:19:04,754 p=17390 u=ridma |  TASK [install-sensu : Enable and Restarting sensu-server] *************************************************************************
+2018-12-17 23:19:13,309 p=17390 u=ridma |  changed: [3.83.118.235]
+2018-12-17 23:19:13,358 p=17390 u=ridma |  TASK [install-sensu : Enable and Restarting sensu-api] ****************************************************************************
+2018-12-17 23:19:22,320 p=17390 u=ridma |  fatal: [3.83.118.235]: FAILED! => {"changed": false, "msg": "Unable to start service sensu-api: Job for sensu-api.service failed because the control process exited with error code. See \"systemctl status sensu-api.service\" and \"journalctl -xe\" for details.\n"}
+2018-12-17 23:19:22,326 p=17390 u=ridma |  	to retry, use: --limit @/home/ridma/Desktop/Fiver/richrock213/install-all.retry
+
+2018-12-17 23:19:22,327 p=17390 u=ridma |  PLAY RECAP ************************************************************************************************************************
+2018-12-17 23:19:22,328 p=17390 u=ridma |  3.83.118.235               : ok=37   changed=28   unreachable=0    failed=1   
+2018-12-17 23:58:20,172 p=20769 u=ridma |  [DEPRECATION WARNING]: [defaults]hostfile option, The key is misleading as it can also be a list of hosts, a directory or a list of paths , use [defaults] inventory=/path/to/file|dir instead. This 
+feature will be removed in version 2.8. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:58:20,571 p=20769 u=ridma |  PLAY [server] ******************************************************************************************************************************************************************************************
+2018-12-17 23:58:20,590 p=20769 u=ridma |  TASK [Gathering Facts] *********************************************************************************************************************************************************************************
+2018-12-17 23:58:38,951 p=20769 u=ridma |  ok: [35.175.205.133]
+2018-12-17 23:58:38,993 p=20769 u=ridma |  TASK [install-docker : apt-get update] *****************************************************************************************************************************************************************
+2018-12-17 23:58:42,925 p=20769 u=ridma |   [ERROR]: User interrupted execution
+
+2018-12-17 23:58:51,710 p=20845 u=ridma |  [DEPRECATION WARNING]: [defaults]hostfile option, The key is misleading as it can also be a list of hosts, a directory or a list of paths , use [defaults] inventory=/path/to/file|dir instead. This 
+feature will be removed in version 2.8. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2018-12-17 23:58:52,100 p=20845 u=ridma |  PLAY [server] ******************************************************************************************************************************************************************************************
+2018-12-17 23:58:52,118 p=20845 u=ridma |  TASK [Gathering Facts] *********************************************************************************************************************************************************************************
+2018-12-17 23:59:04,547 p=20845 u=ridma |  ok: [35.175.205.133]
+2018-12-17 23:59:04,606 p=20845 u=ridma |  TASK [install-rabbitMQ : copy Docekrfiles] *************************************************************************************************************************************************************
+2018-12-18 00:00:08,574 p=20845 u=ridma |  ok: [35.175.205.133] => (item=Dockerfile)
+2018-12-18 00:01:11,133 p=20845 u=ridma |  ok: [35.175.205.133] => (item=init.sh)
+2018-12-18 00:01:16,276 p=20845 u=ridma |   [ERROR]: User interrupted execution
+
