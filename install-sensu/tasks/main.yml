@@ -116,3 +116,6 @@
     name: firewalld
     enabled: yes   
     state: restarted 
+
+- name: firewalld
+  shell: firewall-cmd --permanent --add-port=3000/tcp

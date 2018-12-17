@@ -1,3 +1,4 @@
 [server]
+#34.239.124.222  ansible_ssh_user=root 
 35.175.205.133 ansible_ssh_pass=1992 ansible_ssh_user=ridma ansible_sudo_pass=1992
 
