@@ -7,5 +7,5 @@
   roles:
    #- install-docker
    - install-rabbitMQ
-   - install-redis
-   - install-sensu
+   #- install-redis
+   #- install-sensu

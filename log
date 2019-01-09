@@ -3321,3 +3321,6 @@ feature will be removed in version 2.8. Deprecation warnings can be disabled by 
 2018-12-18 00:01:11,133 p=20845 u=ridma |  ok: [35.175.205.133] => (item=init.sh)
 2018-12-18 00:01:16,276 p=20845 u=ridma |   [ERROR]: User interrupted execution
 
+2018-12-18 00:28:05,765 p=22325 u=ridma |  ERROR! Missing target hosts
+2018-12-18 00:28:11,789 p=22339 u=ridma |  ERROR! Missing target hosts
+2018-12-18 00:28:19,198 p=22351 u=ridma |  ERROR! You must specify a playbook file to run
